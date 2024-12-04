@@ -1,4 +1,4 @@
-import logging
+import logging 
 import os
 import platform
 import posixpath
@@ -256,17 +256,22 @@ def _run_mlflow_run_cmd(mlflow_run_arr, env_map):
     else:
         return subprocess.Popen(mlflow_run_arr, env=final_env, text=True, preexec_fn=os.setsid)
 
+## start of security improvements added on 2024-01-12
+def _validate_and_sanitize_command(command):
+    # Security improvement added on 2024-01-12: Validate the command to prevent code injection
+    # Using only built-in functions and methods
+    dangerous_chars = [';', '&', '|', '`', '$', '>', '<']
+    for char in dangerous_chars:
+        if char in command:
+            raise MlflowException(f"Invalid character '{char}' detected in command.")
+    if not command.strip():
+        raise MlflowException("Command is empty or whitespace.")
+## end of security improvements added on 2024-01-12
 
-def _run_entry_point(command, work_dir, experiment_id, run_id):  # noqa: D417
-    """
-    Run an entry point command in a subprocess, returning a SubmittedRun that can be used to
-    query the run's status.
-
-    Args:
-        command: Entry point command to run
-        work_dir: Working directory in which to run the command
-        run_id: MLflow run ID associated with the entry point execution.
-    """
+def _run_entry_point(command, work_dir, experiment_id, run_id):
+    ## start of security improvements added on 2024-01-12
+    _validate_and_sanitize_command(command)
+    ## end of security improvements added on 2024-01-12
     env = os.environ.copy()
     env.update(get_run_env_vars(run_id, experiment_id))
     env.update(get_databricks_env_vars(tracking_uri=mlflow.get_tracking_uri()))
