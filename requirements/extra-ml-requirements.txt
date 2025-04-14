@@ -30,7 +30,7 @@ statsmodels
 # Required by mlflow.h2o
 h2o
 # Required by mlflow.onnx
-onnx>=1.11.0
+onnx>=1.17.0
 onnxruntime
 tf2onnx
 # Required by mlflow.spark and using Delta with MLflow Tracking datasets
@@ -75,3 +75,6 @@ langchain
 promptflow
 # Required by mlflow.sentence_transformers
 sentence-transformers
+numpy>=1.22.2 # not directly required, pinned by Snyk to avoid a vulnerability
+requests>=2.32.2 # not directly required, pinned by Snyk to avoid a vulnerability
+urllib3>=2.2.2 # not directly required, pinned by Snyk to avoid a vulnerability
