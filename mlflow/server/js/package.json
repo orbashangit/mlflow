@@ -34,7 +34,7 @@
     "@tanstack/react-virtual": "^3.8.1",
     "@types/react-virtualized": "^9.21.9",
     "antd": "4.16.8",
-    "babel-jest": "^27.5.1",
+    "babel-jest": "^30.0.0",
     "buffer": "^6.0.3",
     "bytes": "3.0.0",
     "classnames": "^2.2.6",
