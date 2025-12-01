@@ -510,7 +510,7 @@ websocket-client==1.2.1 \
     --hash=sha256:0133d2f784858e59959ce82ddac316634229da55b498aac311f1620567a710ec \
     --hash=sha256:8dfb715d8a992f5712fff8c843adae94e22b22a99b2c5e6b0ec4a1a981cc4e0d
     # via docker
-werkzeug==2.0.2 \
+werkzeug==3.1.4 \
     --hash=sha256:63d3dc1cf60e7b7e35e97fa9861f7397283b75d765afcaefd993d6046899de8f \
     --hash=sha256:aa2bb6fc8dee8d6c504c0ac1e7f5f7dc5810a9903e793b6f715a9f015bdadb9a
     # via flask
