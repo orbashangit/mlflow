@@ -280,7 +280,7 @@ prometheus-flask-exporter==0.18.5 \
     --hash=sha256:38a3a1fdaf4fc98f988d33f551a8005d778d6b43ca0a2bc4aafb19d0449a48b9 \
     --hash=sha256:f9a03e88a8415fe96f785c31fc82bbd290a606aaab87bd244414637d55ef0ba4
     # via mlflow
-protobuf==3.19.1 \
+protobuf==6.33.5 \
     --hash=sha256:038daf4fa38a7e818dd61f51f22588d61755160a98db087a046f80d66b855942 \
     --hash=sha256:28ccea56d4dc38d35cd70c43c2da2f40ac0be0a355ef882242e8586c6d66666f \
     --hash=sha256:36d90676d6f426718463fe382ec6274909337ca6319d375eebd2044e6c6ac560 \
